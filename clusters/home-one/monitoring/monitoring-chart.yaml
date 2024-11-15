@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmChart
+metadata:
+  name: monitoring
+  namespace: monitoring
+spec:
+  interval: 5m0s
+  chart: monitoring
+  reconcileStrategy: ChartVersion
+  sourceRef:
+    kind: HelmRepository
+    name: monitoring
+  version: '65.5.*'

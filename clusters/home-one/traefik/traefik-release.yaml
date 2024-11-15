@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: traefik
+  labels:
+    type: infrastructure
+spec:
+  chartRef:
+    kind: OCIRepository
+    name: traefik
+    namespace: traefik
+  interval: 10m
+  values:
+    replicaCount: 1
